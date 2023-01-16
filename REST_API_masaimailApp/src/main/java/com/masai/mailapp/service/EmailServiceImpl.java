@@ -21,6 +21,7 @@ public class EmailServiceImpl implements EmailService {
 	public Email starMail(int eId) {
 		Email email = emailRepository.findById(eId).get();
 		email.setStarredMessage(true);
+		emailRepository.save(email);
 		return email;
 	}
 

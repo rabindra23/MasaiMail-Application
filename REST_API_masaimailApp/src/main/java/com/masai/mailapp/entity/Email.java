@@ -1,5 +1,7 @@
 package com.masai.mailapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -15,6 +17,7 @@ public class Email {
 	private String message;
 	private Boolean starredMessage;
 	@ManyToOne
+	@JsonIgnore
 	private User user;
 	
 	public Email() {}
